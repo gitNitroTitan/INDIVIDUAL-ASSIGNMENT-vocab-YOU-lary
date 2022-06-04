@@ -1,12 +1,11 @@
 // USE WITH FIREBASE AUTH
-// import checkLoginStatus from './helpers/auth';
+import checkLoginStatus from './helpers/auth/signIn';
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
-    <h1>HELLO! You are up and running!</h1>
-    <small>Open your dev tools</small><br />
+    <h1>WELCOME to vocab-YOU-lary!!</h1>
     <button class="btn btn-danger" id="click-me">Click ME!</button><br />
     <hr />
     <h2>These are font awesome icons:</h2>
@@ -14,12 +13,12 @@ const init = () => {
   `;
   console.warn('YOU ARE UP AND RUNNING!');
 
-  document
-    .querySelector('#click-me')
-    .addEventListener('click', () => console.warn('You clicked that button!'));
+  // document
+  //   .querySelector('#click-me')
+  //   .addEventListener('click', () => console.warn('You clicked that button!'));
 
   // USE WITH FIREBASE AUTH
-  // checkLoginStatus();
+  checkLoginStatus();
 };
 
 init();
