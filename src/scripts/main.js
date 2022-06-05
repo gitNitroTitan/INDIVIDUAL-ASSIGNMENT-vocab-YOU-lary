@@ -1,5 +1,7 @@
 // USE WITH FIREBASE AUTH
-import checkLoginStatus from './helpers/auth/signIn';
+// import signIn from './helpers/auth/signIn';
+import checkLoginStatus from './helpers/checkLoginStatus';
+
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 

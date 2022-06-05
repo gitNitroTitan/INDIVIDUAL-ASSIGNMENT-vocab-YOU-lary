@@ -1,4 +1,4 @@
-import signOut from '../helpers/auth/signOut;
+import signOut from '../helpers/auth/signOut';
 
 const navEvents = () => {
   // LOGOUT BUTTON
