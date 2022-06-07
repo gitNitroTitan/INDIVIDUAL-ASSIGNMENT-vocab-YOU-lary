@@ -9,8 +9,6 @@ const emptyEntry = () => {
 const showEntry = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-entry-btn">Add An Entry</button>';
-  renderToDOM('#add-button', btnString);
   if (array.length) {
     let domString = '';
     array.forEach((obj) => {

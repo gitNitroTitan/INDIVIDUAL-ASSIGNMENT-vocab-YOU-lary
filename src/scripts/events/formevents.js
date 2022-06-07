@@ -2,11 +2,11 @@ import { showEntry } from '../components/pages/vocab';
 import { createEntry, getEntry, editEntry } from '../../api/entryData';
 
 const formEvents = (uid) => {
-  document.querySelector('#navigation').addEventListener('submit', (e) => {
+  document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN ENTRY
-    if (e.target.id.includes('create-entry')) {
-      console.warn('CLICKED SUBMIT ENTRY', e.target.id);
+    if (e.target.id.includes('submit-entry')) {
+      console.warn('CLICKED SUBMIT', e.target.id);
       const vocabObject = {
         title: document.querySelector('#title').value,
         category: document.querySelector('#category').value,

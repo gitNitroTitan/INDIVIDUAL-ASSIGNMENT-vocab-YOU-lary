@@ -4,7 +4,7 @@ import renderToDOM from '../../helpers/renderToDom';
 const addEntryForm = (obj = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `add-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
+  <form id="${obj.firebaseKey ? `update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
       <div class="form-group">
         <label for="image">Title</label>
         <input type="text" class="form-control" id="title" placeholder="title"  value="${obj.title || ''}" required>
