@@ -5,10 +5,9 @@ const navBar = () => {
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
+      <img src="#" alt="" width="45" height="24" class="d-inline-block align-text-top">
+      vocab-YOU-lary
     </a>
-        <a class="navbar-brand title" href="#">vocab-YOU-lary</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,13 +19,13 @@ const navBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="definitions">Definitions</a>
-            </li>
-          </ul>
-          <span class="navbar-text">
-            <div id="cart-button"></div>
+              <a class="nav-link" href="#" id="all-entries">All Entries</a>
+            </li> 
+            <li class="navbar-text"></li>
             <div id="logout-button"></div>
-          </span>
+          </li>
+          </ul>
+         
         </div>
         </div>
       </nav>`;

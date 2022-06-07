@@ -6,12 +6,12 @@ import formEvents from '../events/formEvents';
 import navEvents from '../events/navEvents';
 
 const startApp = (user) => {
-  domBuilder(user); // BUILD THE DOM
-  domEvents(); // ADD THE EVENT LISTENTERS TO THE DOM
-  formEvents(user); // ADD FORM EVENT LISTENTERS TO THE DOM
+  domBuilder(); // BUILD THE DOM
+  domEvents(user.uid); // ADD THE EVENT LISTENTERS TO THE DOM
+  formEvents(user.uid); // ADD FORM EVENT LISTENTERS TO THE DOM
   navBar(); // DYNAMICALLY ADD THE NAV
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
-  navEvents(user); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
+  navEvents(user.uid); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
   // TODO: Put all cards on the DOM on App load
 };
 export default startApp;
