@@ -1,18 +1,37 @@
-const formEvents = () => {
-  document.querySelector('#main-container').addEventListener('submit', (e) => {
+import { showEntry } from '../components/pages/vocab';
+import { createEntry, getEntry, editEntry } from '../../api/entryData';
+
+const formEvents = (uid) => {
+  document.querySelector('#navigation').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.warn('form events');
-    // if (e.target.id.includes('submit-entry')) {
-    //   const vocabObject = {
-    //     title: document.querySelector('#title').value,
-    //     image: document.querySelector('#image').value,
-    //     price: document.querySelector('#price').value,
-    //     description: document.querySelector('#description').value,
-    //     sale: document.querySelector('#sale').checked,
-    //     author_id: document.querySelector('#author_id').value,
-    //   };
-    //   createVocab(vocabObject).then((vocabArray) => showVocab(vocabArray));
-    // }
+    // CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN ENTRY
+    if (e.target.id.includes('create-entry')) {
+      console.warn('CLICKED SUBMIT ENTRY', e.target.id);
+      const vocabObject = {
+        title: document.querySelector('#title').value,
+        category: document.querySelector('#category').value,
+        definition: document.querySelector('#definition').value,
+        uid
+      };
+      createEntry(vocabObject).then((vocabArray) => showEntry(vocabArray));
+    }
+
+    // CLICK EVENT FOR EDITING AN ENTRY
+    if (e.target.id.includes('edit-entry')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn('CLICKED EDIT ENTRY', e.target.id);
+      console.warn(firebaseKey);
+      const vocabObject = {
+        title: document.querySelector('#title').value,
+        category: document.querySelector('#category').value,
+        definition: document.querySelector('#definition').value,
+        firebaseKey,
+        uid
+      };
+      editEntry(vocabObject, uid).then(() => {
+        getEntry(uid).then((response) => showEntry(response));
+      });
+    }
   });
 };
 export default formEvents;
