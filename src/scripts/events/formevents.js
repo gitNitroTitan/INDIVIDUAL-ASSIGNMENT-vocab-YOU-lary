@@ -24,7 +24,8 @@ const formEvents = (uid) => {
         title: document.querySelector('#title').value,
         category: document.querySelector('#category').value,
         definition: document.querySelector('#definition').value,
-        firebaseKey
+        firebaseKey,
+        uid
       };
       updateEntry(vocabObject).then(() => {
         getEntry(uid).then((response) => showEntry(response));
