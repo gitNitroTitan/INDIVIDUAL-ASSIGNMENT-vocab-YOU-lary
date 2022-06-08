@@ -17,8 +17,8 @@ const showEntry = (array) => {
         <h5 class="card-title">${obj.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${obj.category}</h6>
         <p class="card-text">${obj.definition}</p>
-        <a href="#" class="edit-link">Edit</a>
-        <a href="#" class="delete-link">Delete</a>
+        <i id="edit-entry-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+        <i id="delete-entry-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
     </div><br>`;
     });
     renderToDOM('#view', domString);

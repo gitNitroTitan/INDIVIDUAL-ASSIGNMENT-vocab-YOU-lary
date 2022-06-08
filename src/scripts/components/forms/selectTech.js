@@ -2,9 +2,9 @@ import { getEntry } from '../../../api/entryData';
 import renderToDOM from '../../helpers/renderToDom';
 
 const selectTitle = (uid, vocabObj) => {
-  let domString = `<label for="title">Select a Title</label>
-    <select class="form-control" id="title" required>
-    <option value="">Select a Title</option>`;
+  let domString = `<label for="selectTech">Select Tech</label>
+    <select class="form-control" id="selectTech" required>
+    <option value="">Select Technical Language</option>`;
 
   getEntry(uid, vocabObj).then((vocabArray) => {
     vocabArray.forEach((vocab) => {
@@ -18,7 +18,7 @@ const selectTitle = (uid, vocabObj) => {
 
     domString += '</select>';
 
-    renderToDOM('#select-title', domString);
+    renderToDOM('#select-tech', domString);
   });
 };
 
