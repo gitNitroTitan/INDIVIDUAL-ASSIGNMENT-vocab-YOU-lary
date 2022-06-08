@@ -7,17 +7,21 @@ const addEntryForm = (obj = {}) => {
   <form id="${obj.firebaseKey ? `update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
       <div class="form-group">
         <label for="image">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="title"  value="${obj.title || ''}" required>
+        <input type="text" class="form-control" id="title" placeholder="Title"  value="${obj.title || ''}" required>
       </div>
-      <div class="form-group">
+      <div class="form-group" id="category">
         <label for="image">Category</label>
-        <input type="text" class="form-control" id="category" placeholder="category" value="${obj.category || ''}" required>
+          <select class="form-control" id="category">
+          <option selected>Select Category</option>
+          <option value="javascript">JAVASCRIPT</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          value="${obj.category || ''}" required
+          </select>
       </div>
       <div class="form-group">
         <label for="definition">Definition</label>
-        <textarea class="form-control" placeholder="Definition Madafaka" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
-      </div>
-      <div class="form-group" id="select-title">
+        <textarea class="form-control" placeholder="Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
       </div>
       <button type="submit" class="btn btn-primary mt-3">Submit Entry</button>
     </form>`;

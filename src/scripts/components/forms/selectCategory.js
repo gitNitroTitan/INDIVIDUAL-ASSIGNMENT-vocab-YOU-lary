@@ -1,10 +1,10 @@
 import { getEntry } from '../../../api/entryData';
 import renderToDOM from '../../helpers/renderToDom';
 
-const selectTitle = (uid, vocabObj) => {
-  let domString = `<label for="selectTech">Select Tech</label>
-    <select class="form-control" id="selectTech" required>
-    <option value="">Select Technical Language</option>`;
+const selectCategory = (uid, vocabObj) => {
+  let domString = `<label for="selectCategory">Select Category</label>
+    <select class="form-control" id="selectCategory" required>
+    <option value="">Select Category</option>`;
 
   getEntry(uid, vocabObj).then((vocabArray) => {
     vocabArray.forEach((vocab) => {
@@ -22,4 +22,4 @@ const selectTitle = (uid, vocabObj) => {
   });
 };
 
-export default selectTitle;
+export default selectCategory;
