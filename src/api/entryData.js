@@ -16,13 +16,13 @@ const getEntry = () => new Promise((resolve, reject) => {
 });
 
 // CREATE ENTRY
-const createEntry = (uid, vocabObj) => new Promise((resolve, reject) => {
+const createEntry = (vocabObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/vocabulary.json`, vocabObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/vocabulary/${response.data.name}.json`, payload)
         .then(() => {
-          getEntry(uid).then(resolve);
+          getEntry(vocabObj.uid).then(resolve);
         });
     }).catch(reject);
 });
