@@ -2,7 +2,7 @@ import { showEntry } from '../components/pages/vocab';
 import { createEntry, getEntry, editEntry } from '../../api/entryData';
 
 const formEvents = (uid) => {
-  document.querySelector('#main-container').addEventListener('submit', (e) => {
+  document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN ENTRY
     if (e.target.id.includes('submit-entry')) {
