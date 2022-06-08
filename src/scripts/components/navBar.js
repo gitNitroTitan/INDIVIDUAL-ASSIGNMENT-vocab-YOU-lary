@@ -24,6 +24,9 @@ const navBar = () => {
             <li class="navbar-text"></li>
             <div id="logout-button"></div>
           </li>
+          <li class="nav-item">
+          <div id="login-form-container"></div>
+          </li>
           </ul>
          
         </div>
