@@ -35,7 +35,7 @@ const getSingleEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 
 // DELETE ENTRY
-const deleteSingleEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
+const deleteEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/vocabulary/${firebaseKey}.json`, uid)
     .then(() => {
       getEntry(uid).then((vocabArray) => resolve(vocabArray));
@@ -44,7 +44,7 @@ const deleteSingleEntry = (firebaseKey, uid) => new Promise((resolve, reject) =>
 });
 
 // EDIT ENTRY
-const editEntry = (vocabObj) => new Promise((resolve, reject) => {
+const updateEntry = (vocabObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/vocabulary/${vocabObj.firebaseKey}.json`, vocabObj)
     .then(() => getEntry(vocabObj.uid).then(resolve))
     .catch((error) => reject(error));
@@ -53,7 +53,7 @@ const editEntry = (vocabObj) => new Promise((resolve, reject) => {
 export {
   getEntry,
   createEntry,
-  deleteSingleEntry,
-  editEntry,
+  deleteEntry,
+  updateEntry,
   getSingleEntry
 };

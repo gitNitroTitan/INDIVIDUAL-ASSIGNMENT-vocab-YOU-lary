@@ -2,10 +2,10 @@ import renderToDOM from '../helpers/renderToDom';
 
 const navBar = () => {
   const domString = `
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark mb-5">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="#" alt="" width="45" height="24" class="d-inline-block align-text-top">
+    <a class="navbar-brand">
+      <img src="https://i.pinimg.com/originals/23/79/81/237981a010e7e076e74e1e108e101f36.gif" alt="" width="60" height="80" class="d-inline-block align-text-top">
       vocab-YOU-lary
     </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

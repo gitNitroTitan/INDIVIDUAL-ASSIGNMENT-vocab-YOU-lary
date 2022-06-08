@@ -1,5 +1,5 @@
 import { showEntry } from '../components/pages/vocab';
-import { createEntry, getEntry, editEntry } from '../../api/entryData';
+import { createEntry, getEntry, updateEntry } from '../../api/entryData';
 
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -16,19 +16,17 @@ const formEvents = (uid) => {
       createEntry(vocabObject).then((vocabArray) => showEntry(vocabArray));
     }
 
-    // CLICK EVENT FOR EDITING AN ENTRY
-    if (e.target.id.includes('edit-entry')) {
+    // // CLICK EVENT FOR EDITING AN ENTRY
+    if (e.target.id.includes('update-entry')) {
       const [, firebaseKey] = e.target.id.split('--');
       console.warn('CLICKED EDIT ENTRY', e.target.id);
-      console.warn(firebaseKey);
       const vocabObject = {
         title: document.querySelector('#title').value,
         category: document.querySelector('#category').value,
         definition: document.querySelector('#definition').value,
-        firebaseKey,
-        uid
+        firebaseKey
       };
-      editEntry(vocabObject, uid).then(() => {
+      updateEntry(vocabObject).then(() => {
         getEntry(uid).then((response) => showEntry(response));
       });
     }
