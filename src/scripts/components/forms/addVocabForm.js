@@ -9,13 +9,14 @@ const addEntryForm = (obj = {}) => {
         <label for="image">Title</label>
         <input type="text" class="form-control" id="title" placeholder="Title"  value="${obj.title || ''}" required>
       </div>
-      <div class="form-group" id="category">
+      <div class="form-group">
         <label for="image">Category</label>
           <select class="form-control" id="category">
           <option selected>Select Category</option>
           <option value="javascript">JAVASCRIPT</option>
           <option value="html">HTML</option>
           <option value="css">CSS</option>
+          <option value="tech">TECH</option>
           value="${obj.category || ''}" required
           </select>
       </div>
