@@ -2,8 +2,8 @@ import logoutButton from '../components/buttons/logoutButton';
 import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBar';
 import filterButtons from '../components/buttons/filterButtons';
-import domEvents from '../events/domEvents';
-import formEvents from '../events/formEvents';
+import domEvents from '../events/domevents';
+import formEvents from '../events/formevents';
 import navEvents from '../events/navEvents';
 
 const startApp = (user) => {
