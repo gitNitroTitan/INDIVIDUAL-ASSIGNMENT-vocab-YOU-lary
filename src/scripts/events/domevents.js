@@ -1,6 +1,5 @@
-import { deleteEntry, getSingleEntry } from '../../api/entryData';
+import { deleteEntry, getSingleEntry, getEntry } from '../../api/entryData';
 import { showEntry } from '../components/pages/vocab';
-import viewVocab from '../components/pages/viewVocab';
 import addEntryForm from '../components/forms/addVocabForm';
 
 const domEvents = (uid) => {
@@ -23,7 +22,7 @@ const domEvents = (uid) => {
     // CLICK EVENT EDITING/UPDATING AN ENTRY
     // 1.pass the entry***
     // 2.pass the entry object to vocab form*** along with uid
-    if (e.target.id.includes('edit-entry-btn')) {
+    if (e.target.id.includes('update-entry')) {
       console.warn('EDIT ENTRY', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       getSingleEntry(firebaseKey).then((vocabObj) => addEntryForm(uid, vocabObj));
@@ -32,9 +31,9 @@ const domEvents = (uid) => {
     // CLICK EVENT FOR VIEW VOCAB DETAILS
     if (e.target.id.includes('view-entry-btn')) {
       console.warn('clicked view-entry-btn');
-      const [, vocabFirebaseKey] = e.target.id.split('--');
+      const [, firebaseKey] = e.target.id.split('--');
       console.warn(e.target.id);
-      viewVocab(vocabFirebaseKey).then((vocabObject) => viewVocab(vocabObject));
+      getEntry(firebaseKey).then((vocabObject) => showEntry(vocabObject));
     }
   });
 };

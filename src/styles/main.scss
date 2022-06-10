@@ -1,17 +1,53 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
 
-
 body {
   background-color: black;
   color: white;
   text-align: center;
   margin-top: 100px;
 }
-.card-body{
-  background-color: blue;
+#main-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-content: center;
+}
+
+#filter-container{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1em;
+  justify-content: center;
+}
+button{
+  margin: 10px;
+}
+#form-container {
+  width: 100%;
+  padding:10px;
+  justify-content: center;
   color: white;
 }
-.navbar{
+.card-body {
+  background-color: rgba(34, 114, 156, 0.617);
+  color: white;
+}
+.navbar {
 background-color:#05122d;
+
+}
+.card {
+  background-color: black; 
+}
+.container-fluid {
+  display:flex;
+  flex-wrap:nowrap;
+  gap: 1em;
+  justify-content: center;
+}
+.navbar-brand {
+  display: flex;
+  justify-content: center;
 }

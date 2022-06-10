@@ -17,11 +17,12 @@ const showEntry = (array) => {
         <h5 class="card-title">${obj.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${obj.category}</h6>
         <p class="card-text">${obj.definition}</p>
-        <i id="edit-entry-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+        <p class="card-text">${obj.date}</p>
+        <i id="update-entry-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
         <i id="delete-entry-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-    </div><br>`;
+    </div></div>`;
     });
-    renderToDOM('#view', domString);
+    renderToDOM('#view2', domString);
   } else {
     emptyEntry();
   }

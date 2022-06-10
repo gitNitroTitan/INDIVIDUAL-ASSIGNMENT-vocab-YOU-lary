@@ -13,21 +13,21 @@ const navBar = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
+            <li class="nav-item my-2 my-sm-0 active">
               <a class="nav-link" href="#" id="create-entry">
                 Create Entry <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" my-2 my-sm-0>
               <a class="nav-link" href="#" id="all-entries">All Entries</a>
             </li> 
-            <li class="navbar-text"></li>
+            <li class="nav-item my-2 my-sm-0">
+            <div id="login-form-container"></div>
+            </li>
+            </ul>
+            <li class="navbar-text"my-2 my-sm-0></li>
             <div id="logout-button"></div>
           </li>
-          <li class="nav-item">
-          <div id="login-form-container"></div>
-          </li>
-          </ul>
          
         </div>
         </div>
