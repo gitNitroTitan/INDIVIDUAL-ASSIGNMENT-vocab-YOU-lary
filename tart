@@ -1,0 +1,46 @@
+[1mdiff --git a/src/scripts/components/domBuilder.js b/src/scripts/components/domBuilder.js[m
+[1mindex aaac93a..5861411 100644[m
+[1m--- a/src/scripts/components/domBuilder.js[m
+[1m+++ b/src/scripts/components/domBuilder.js[m
+[36m@@ -6,6 +6,7 @@[m [mconst domBuilder = () => {[m
+     <div id="filter-container"></div>[m
+     <div id="navigation"></div>  [m
+     <div id="form-container"></div>[m
+[32m+[m[32m    <div id="login-form-container"></div>[m
+     <div id="view"></div>[m
+     <div id="view2"></div>[m
+   </div>`;[m
+[1mdiff --git a/src/scripts/components/navBar.js b/src/scripts/components/navBar.js[m
+[1mindex 54dab33..b46dbf0 100644[m
+[1m--- a/src/scripts/components/navBar.js[m
+[1m+++ b/src/scripts/components/navBar.js[m
+[36m@@ -22,13 +22,11 @@[m [mconst navBar = () => {[m
+               <a class="nav-link" href="#" id="all-entries">All Entries</a>[m
+             </li> [m
+             <li class="nav-item my-2 my-sm-0">[m
+[31m-            <div id="login-form-container"></div>[m
+             </li>[m
+[31m-            </ul>[m
+             <li class="navbar-text"my-2 my-sm-0></li>[m
+             <div id="logout-button"></div>[m
+           </li>[m
+[31m-         [m
+[32m+[m[32m          </ul>[m
+         </div>[m
+         </div>[m
+       </nav>`;[m
+[1mdiff --git a/src/scripts/helpers/startApp.js b/src/scripts/helpers/startApp.js[m
+[1mindex 20a431e..706a531 100644[m
+[1m--- a/src/scripts/helpers/startApp.js[m
+[1m+++ b/src/scripts/helpers/startApp.js[m
+[36m@@ -2,8 +2,8 @@[m [mimport logoutButton from '../components/buttons/logoutButton';[m
+ import domBuilder from '../components/domBuilder';[m
+ import navBar from '../components/navBar';[m
+ import filterButtons from '../components/buttons/filterButtons';[m
+[31m-import domEvents from '../events/domEvents';[m
+[31m-import formEvents from '../events/formEvents';[m
+[32m+[m[32mimport domEvents from '../events/domevents';[m
+[32m+[m[32mimport formEvents from '../events/formevents';[m
+ import navEvents from '../events/navEvents';[m
+ [m
+ const startApp = (user) => {[m

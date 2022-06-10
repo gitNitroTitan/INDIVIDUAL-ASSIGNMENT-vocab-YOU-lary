@@ -1,0 +1,80 @@
+HEAD@{0}: checkout: moving from edit-card to edit-card
+stash@{0}: WIP on edit-card: 8d94675 Merge pull request #10 from gitNitroTitan/edit-card
+HEAD@{1}: reset: moving to HEAD
+stash@{0}: WIP on edit-card: 8d94675 Merge pull request #10 from gitNitroTitan/edit-card
+origin/main@{0}: pull origin main: fast-forward
+HEAD@{2}: checkout: moving from select-input-fix to edit-card
+HEAD@{3}: checkout: moving from select-input-fix to select-input-fix
+HEAD@{4}: checkout: moving from auth-button-reloc to select-input-fix
+HEAD@{5}: checkout: moving from select-input to auth-button-reloc
+HEAD@{6}: reset: moving to HEAD
+stash@{1}: On select-input-fix: stash
+HEAD@{7}: checkout: moving from select-input-fix to select-input
+HEAD@{8}: reset: moving to HEAD
+stash@{1}: On select-input-fix: stash
+HEAD@{9}: checkout: moving from select-input-fix to select-input-fix
+select-input-fix@{0}: pull origin main: Fast-forward
+HEAD@{10}: pull origin main: Fast-forward
+HEAD@{11}: checkout: moving from edit-card to select-input-fix
+HEAD@{12}: reset: moving to HEAD
+stash@{2}: WIP on edit-card: 8d94675 Merge pull request #10 from gitNitroTitan/edit-card
+stash@{2}: WIP on edit-card: 8d94675 Merge pull request #10 from gitNitroTitan/edit-card
+edit-card@{0}: pull origin main: Fast-forward
+origin/main@{1}: pull origin main: fast-forward
+HEAD@{13}: pull origin main: Fast-forward
+origin/edit-card@{0}: update by push
+edit-card@{1}: commit: edit card button not pushing oject into form
+HEAD@{14}: commit: edit card button not pushing oject into form
+edit-card@{2}: branch: Created from HEAD
+HEAD@{15}: checkout: moving from select-input-fix to edit-card
+origin/select-input-fix@{0}: update by push
+select-input-fix@{1}: commit: deleted dup id for category in form and is now pushing to object
+HEAD@{16}: commit: deleted dup id for category in form and is now pushing to object
+select-input-fix@{2}: branch: Created from HEAD
+HEAD@{17}: checkout: moving from select-input to select-input-fix
+origin/select-input@{0}: update by push
+select-input@{0}: commit: select not pushing to object
+HEAD@{18}: commit: select not pushing to object
+select-input@{1}: branch: Created from HEAD
+HEAD@{19}: checkout: moving from auth-button-reloc to select-input
+origin/auth-button-reloc@{0}: update by push
+auth-button-reloc@{0}: commit: moved auth sign in-out button to nav bar
+HEAD@{20}: commit: moved auth sign in-out button to nav bar
+auth-button-reloc@{1}: branch: Created from HEAD
+HEAD@{21}: checkout: moving from edit-delete-cards to auth-button-reloc
+origin/edit-delete-cards@{0}: update by push
+edit-delete-cards@{0}: commit: buttons work but do not populate form from array
+HEAD@{22}: commit: buttons work but do not populate form from array
+edit-delete-cards@{1}: branch: Created from HEAD
+HEAD@{23}: checkout: moving from form-submit to edit-delete-cards
+origin/form-submit@{0}: update by push
+form-submit@{0}: commit: form submit button pushing object data
+HEAD@{24}: commit: form submit button pushing object data
+form-submit@{1}: branch: Created from HEAD
+HEAD@{25}: checkout: moving from form-entry to form-submit
+origin/form-entry@{0}: update by push
+form-entry@{0}: commit: submit button fucntioning, need to work on promise functoining properly
+HEAD@{26}: commit: submit button fucntioning, need to work on promise functoining properly
+form-entry@{1}: branch: Created from HEAD
+HEAD@{27}: checkout: moving from cards-on-dom to form-entry
+origin/cards-on-dom@{0}: update by push
+cards-on-dom@{0}: commit: cards on DOM and form on DOM
+HEAD@{28}: commit: cards on DOM and form on DOM
+cards-on-dom@{1}: branch: Created from HEAD
+HEAD@{29}: checkout: moving from firebase-working to cards-on-dom
+origin/firebase-working@{0}: update by push
+firebase-working@{0}: commit: firebase working without errors logging in
+HEAD@{30}: commit: firebase working without errors logging in
+firebase-working@{1}: branch: Created from HEAD
+HEAD@{31}: checkout: moving from setup to firebase-working
+stash@{3}: WIP on setup: 3026f2d initial setup push
+HEAD@{32}: reset: moving to HEAD
+stash@{3}: WIP on setup: 3026f2d initial setup push
+origin/setup@{0}: update by push
+setup@{0}: commit: initial setup push
+HEAD@{33}: commit: initial setup push
+setup@{1}: branch: Created from HEAD
+HEAD@{34}: checkout: moving from main to setup
+main@{0}: clone: from github.com:gitNitroTitan/vocab-YOU-lary-jk.git
+origin/HEAD@{0}: clone: from github.com:gitNitroTitan/vocab-YOU-lary-jk.git
+HEAD@{35}: clone: from github.com:gitNitroTitan/vocab-YOU-lary-jk.git
