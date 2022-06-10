@@ -3,8 +3,10 @@ import renderToDOM from '../../helpers/renderToDom';
 
 const selectCategory = (uid, vocabObj) => {
   let domString = `<label for="selectCategory">Select Category</label>
-    <select class="form-control" id="selectCategory" required>
-    <option value="">Select Category</option>`;
+    <select class="form-control" id="select-a-category" required>
+      <option value="">Select Category</option>
+  
+    </select>`;
 
   getEntry(uid, vocabObj).then((vocabArray) => {
     vocabArray.forEach((vocab) => {
@@ -18,7 +20,7 @@ const selectCategory = (uid, vocabObj) => {
 
     domString += '</select>';
 
-    renderToDOM('#select-tech', domString);
+    renderToDOM('#select-category', domString);
   });
 };
 

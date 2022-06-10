@@ -16,21 +16,27 @@ const getEntry = () => new Promise((resolve, reject) => {
 });
 
 // CREATE ENTRY
-const createEntry = (vocabObj) => new Promise((resolve, reject) => {
+const createEntry = (uid, vocabObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/vocabulary.json`, vocabObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/vocabulary/${response.data.name}.json`, payload)
         .then(() => {
-          getEntry(vocabObj.uid).then(resolve);
+          getEntry(uid).then(resolve);
         });
     }).catch(reject);
 });
 
 // GET SINGLE ENTRY
-const getSingleEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/vocabulary/${firebaseKey}.json`, uid)
-    .then((response) => resolve(response.data))
+const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocabulary/${firebaseKey}.json`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
     .catch((error) => reject(error));
 });
 
@@ -46,7 +52,7 @@ const deleteEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
 // EDIT ENTRY
 const updateEntry = (vocabObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/vocabulary/${vocabObj.firebaseKey}.json`, vocabObj)
-    .then(() => getEntry(vocabObj.uid).then(resolve))
+    .then(() => getEntry().then(resolve))
     .catch((error) => reject(error));
 });
 
