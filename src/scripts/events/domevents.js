@@ -23,14 +23,14 @@ const domEvents = (uid) => {
     // CLICK EVENT EDITING/UPDATING AN ENTRY
     // 1.pass the entry***
     // 2.pass the entry object to vocab form*** along with uid
-    if (e.target.id.includes('update-entry-btn')) {
+    if (e.target.id.includes('update-entry')) {
       console.warn('EDIT ENTRY', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleEntry(firebaseKey).then((vocabObj) => console.warn(vocabObj));
+      getSingleEntry(firebaseKey).then((response) => addEntryForm(uid, response));
     }
 
     // CLICK EVENT FOR VIEW VOCAB DETAILS
-    if (e.target.id.includes('view-entry-btn')) {
+    if (e.target.id.includes('view-entry')) {
       console.warn('clicked view-entry-btn');
       const [, vocabFirebaseKey] = e.target.id.split('--');
       console.warn(e.target.id);

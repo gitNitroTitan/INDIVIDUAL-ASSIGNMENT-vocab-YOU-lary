@@ -1,5 +1,5 @@
 import { showEntry } from '../components/pages/vocab';
-import { createEntry, getEntry, updateEntry } from '../../api/entryData';
+import { createEntry, updateEntry } from '../../api/entryData';
 
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -29,9 +29,9 @@ const formEvents = (uid) => {
         firebaseKey,
         uid
       };
-      updateEntry(vocabObject).then(() => {
-        getEntry(uid).then((response) => showEntry(response));
-      });
+      console.warn(vocabObject);
+
+      updateEntry(firebaseKey, vocabObject).then((newVocabObject) => showEntry(newVocabObject, uid));
     }
   });
 };

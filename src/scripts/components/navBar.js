@@ -25,7 +25,9 @@ const navBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="all-entries">All Entries</a>
+              <a class="nav-link" href="#" id="all-entries">
+              All Entries<span class="sr-only">(current)</span>
+              </a>
             </li>
             <li class="navbar-text"
             <div id="logout-button"></div>

@@ -5,7 +5,7 @@ import '../styles/main.scss';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
-    <h1>WELCOME to vocab-YOU-lary!!</h1>
+    <h1>WELCOME TO DEV_WURDZ!!</h1>
    
   `;
   // USE WITH FIREBASE AUTH
