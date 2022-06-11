@@ -29,10 +29,9 @@ padding: 10px;
 }
 #view {
   display: flex;
-  flex-flow: row;
-  grid-row: auto;
-  width: 90%;
+  flex-flow: row wrap;
   text-align: center;
+  width: 90%;
   margin: auto;
 
   .card-body{
@@ -61,6 +60,8 @@ button{
 }
 .card{
   background-color: black;
+  display: flex;
+  flex-flow: row wrap;
 }
 .btn-danger{
   margin-top: 40px;
@@ -69,7 +70,7 @@ button{
 
 }
 .btn-info{
-  margin-top: 40px;
+  margin-top: auto;
   display: flex;
   justify-items: flex-end;
 }
