@@ -15,8 +15,6 @@ const navEvents = (uid) => {
   });
   document.querySelector('#create-entry').addEventListener('click', () => {
     addEntryForm(uid);
-
-    // getEntry(uid).then((vocabArray) => showEntry(vocabArray));
     console.warn('CLICKED CREATE ENTRY');
   });
 };
