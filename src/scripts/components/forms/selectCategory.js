@@ -23,7 +23,7 @@ const selectCategory = (uid, vocabObj) => {
 
     domString += '</select>';
 
-    renderToDOM('#select-a-category', domString);
+    renderToDOM('#category', domString);
   });
 };
 

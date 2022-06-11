@@ -50,9 +50,9 @@ const deleteEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 
 // EDIT ENTRY
-const updateEntry = (vocabObj) => new Promise((resolve, reject) => {
+const updateEntry = (vocabObj, uid) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/vocabulary/${vocabObj.firebaseKey}.json`, vocabObj)
-    .then(() => getEntry(vocabObj).then(resolve))
+    .then(() => getEntry(uid).then(resolve))
     .catch((error) => reject(error));
 });
 

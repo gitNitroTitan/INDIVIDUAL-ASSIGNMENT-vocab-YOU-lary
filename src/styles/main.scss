@@ -8,10 +8,73 @@ body {
   text-align: center;
   margin-top: 100px;
 }
-.card-body{
-  background-color: blue;
-  color: white;
-}
+
 .navbar{
 background-color:#05122d;
+font-size: 2em;
+font-family: cursive;
+padding: 10px;
+}
+
+.navbar-brand {
+  align-content: flex-end;
+  font-weight: 900;
+  font-size: 2em;
+}
+#form-container {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  color: white;
+}
+#view {
+  display: flex;
+  flex-flow: row;
+  grid-row: auto;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+
+  .card-body{
+    background-color: blue;
+    border: 3px solid grey;
+    border-radius: 10%;
+    box-shadow: 0 0 10px;
+    color: white;
+    width: 300px;
+    margin: 5px;
+  }
+}
+#login-form-container{
+  display: flex;
+  align-items: flex-end;
+}
+button{
+  margin: 10px;
+  padding: 20px;
+}
+#vocab-logo{
+  display:flex;
+  justify-content: flex-start;
+  border: 3px solid rgb(125, 255, 253);
+  padding: 10px;
+}
+.card{
+  background-color: black;
+}
+.btn-danger{
+  margin-top: 40px;
+  display: flex;
+  justify-items: flex-end;
+
+}
+.btn-info{
+  margin-top: 40px;
+  display: flex;
+  justify-items: flex-end;
+}
+.nav-link{
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
 }

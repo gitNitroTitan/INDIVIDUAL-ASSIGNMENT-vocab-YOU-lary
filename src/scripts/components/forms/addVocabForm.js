@@ -10,7 +10,7 @@ const addEntryForm = (obj = {}) => {
         <label for="image">Title</label>
         <input type="text" class="form-control" id="title" placeholder="Title" value="${obj.title || ''}" required>
       </div>
-      <div class="form-group" id= "select-a-category">
+      <div class="form-group" id= "category" placeholder= "Select Category">
       </div>
       <div class="form-group">
         <label for="definition">Definition</label>
@@ -20,7 +20,7 @@ const addEntryForm = (obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectCategory('uid', `${obj.category} || ''}`);
+  selectCategory(`${obj.category} || ''}`);
 };
 
 export default addEntryForm;
