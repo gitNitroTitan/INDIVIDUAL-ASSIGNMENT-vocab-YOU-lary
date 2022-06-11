@@ -5,7 +5,10 @@ const selectCategory = (uid, vocabObj) => {
   let domString = `<label for="selectCategory">Select Category</label>
     <select class="form-control" id="select-a-category" required>
       <option value="">Select Category</option>
-  
+      <option value="javascript">JAVASCRIPT</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="tech">TECH</option>
     </select>`;
 
   getEntry(uid, vocabObj).then((vocabArray) => {
@@ -14,13 +17,13 @@ const selectCategory = (uid, vocabObj) => {
           <option 
             value="${vocab.firebaseKey}" 
             ${vocabObj === vocab.firebaseKey ? 'selected' : ''}>
-              ${vocab.title}
+             
           </option>`;
     });
 
     domString += '</select>';
 
-    renderToDOM('#select-category', domString);
+    renderToDOM('#select-a-category', domString);
   });
 };
 
