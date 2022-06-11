@@ -8,7 +8,7 @@ const addEntryForm = (obj = {}) => {
   <form id="${obj.firebaseKey ? `update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
       <div class="form-group">
         <label for="image">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="Title"  value="${obj.title || ''}" required>
+        <input type="text" class="form-control" id="title" placeholder="Title" value="${obj.title || ''}" required>
       </div>
       <div class="form-group" id= "select-a-category">
       </div>
@@ -19,8 +19,8 @@ const addEntryForm = (obj = {}) => {
       <button type="submit" class="btn btn-primary mt-3">Submit Entry</button>
     </form>`;
 
-  selectCategory('uid', `${obj.category} || ''}`);
   renderToDOM('#form-container', domString);
+  selectCategory('uid', `${obj.category} || ''}`);
 };
 
 export default addEntryForm;

@@ -9,8 +9,9 @@ const formEvents = (uid) => {
       console.warn('CLICKED SUBMIT', e.target.id);
       const vocabObject = {
         title: document.querySelector('#title').value,
-        category: document.querySelector('#category').value,
+        category: document.querySelector('#select-a-category').value,
         definition: document.querySelector('#definition').value,
+        date: new Date().toLocaleString,
         uid
       };
       createEntry(vocabObject).then((vocabArray) => showEntry(vocabArray));
@@ -24,6 +25,7 @@ const formEvents = (uid) => {
         title: document.querySelector('#title').value,
         category: document.querySelector('#category').value,
         definition: document.querySelector('#definition').value,
+        date: new Date().toLocaleString,
         firebaseKey,
         uid
       };

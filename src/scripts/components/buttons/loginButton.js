@@ -1,9 +1,10 @@
+import renderToDOM from '../../helpers/renderToDom';
 import signIn from '../../helpers/auth/signIn';
 
 // GOOGLE LOGIN BUTTON
 const loginButton = () => {
   const domString = '<button id="google-auth" class="btn btn-danger">GOOGLE LOGIN</button>';
-  document.querySelector('#login-form-container').innerHTML = domString;
+  renderToDOM('#login-form-container', domString);
   document.querySelector('#google-auth').addEventListener('click', signIn);
 };
 

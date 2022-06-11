@@ -16,7 +16,7 @@ const getEntry = () => new Promise((resolve, reject) => {
 });
 
 // CREATE ENTRY
-const createEntry = (uid, vocabObj) => new Promise((resolve, reject) => {
+const createEntry = (vocabObj, uid) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/vocabulary.json`, vocabObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
