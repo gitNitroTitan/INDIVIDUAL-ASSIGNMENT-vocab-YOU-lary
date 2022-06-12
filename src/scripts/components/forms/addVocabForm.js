@@ -1,17 +1,25 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
-import selectCategory from './selectCategory';
 
-const addEntryForm = (uid, obj = {}) => {
+const addEntryForm = (obj = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `submit-update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
+  <form id="${obj.firebaseKey ? `update-card--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
       <div class="form-group">
         <label for="image">Title</label>
         <input type="text" class="form-control" id="title" placeholder="Title" value="${obj.title || ''}" required>
       </div>
-      <div class="form-group" id= "category" value="${obj.category || ''}" required>>
+      <br>
+      <label for="cat-label">Category</label>
+      <div class="form-group" id="select-form">
+      <select id="category" class="form-select" aria-label="Default select example" >${obj.category || ''}
+        <option selected>Select Menu</option>
+        <option value="CSS">CSS</option>
+        <option value="HTML">HTML</option>
+        <option value="Javascript">Javascript</option>
+      </select>
       </div>
+     <br>
       <div class="form-group">
         <label for="definition">Definition</label>
         <textarea class="form-control" placeholder="Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
@@ -20,7 +28,6 @@ const addEntryForm = (uid, obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectCategory(`${obj.category} || ''}`);
 };
 
 export default addEntryForm;

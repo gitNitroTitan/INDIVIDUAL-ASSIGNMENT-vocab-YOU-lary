@@ -2,8 +2,7 @@ import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
 
 const emptyEntry = () => {
-  const domString = '<h1>No Items</h1>';
-  renderToDOM('#view', domString);
+  document.querySelector('#view').innerHTML = '<h1>No Items</h1>';
 };
 
 const showEntry = (array) => {
@@ -20,7 +19,9 @@ const showEntry = (array) => {
         <p class="card-date">${obj.date}</p>
         <i id="update-entry-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
         <i id="delete-entry-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-    </div><br>`;
+    </div>
+    </div>
+    <br>`;
     });
     renderToDOM('#view', domString);
   } else {

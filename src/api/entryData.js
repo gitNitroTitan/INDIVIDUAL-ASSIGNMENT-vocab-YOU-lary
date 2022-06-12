@@ -3,8 +3,8 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getEntry = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/vocabulary.json`)
+const getEntry = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -38,27 +38,27 @@ const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
 const updateEntry = (vocabObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/vocabulary/${vocabObj.firebaseKey}.json`, vocabObj)
     .then(() => getEntry(vocabObj).then(resolve))
-    .catch((error) => reject(error));
+    .catch(reject);
 });
 // DELETE ENTRY
 const deleteEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/vocabulary/${firebaseKey}.json`, uid)
+  axios.delete(`${dbUrl}/vocabulary/${firebaseKey}.json`)
     .then(() => {
       getEntry(uid).then((vocabArray) => resolve(vocabArray));
     })
     .catch((error) => reject(error));
 });
 
-const getSingleCategory = (category) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/vocabulary?orderBy="category"&equalTo="${category}"`)
-    .then((response) => resolve(response.data))
-    .catch((error) => reject(error));
-});
+// const getSingleCategory = (category) => new Promise((resolve, reject) => {
+//   axios.get(`${dbUrl}/vocabulary?orderBy="category"&equalTo="${category}"`)
+//     .then((response) => resolve(response.data))
+//     .catch((error) => reject(error));
+// });
 export {
   getEntry,
   createEntry,
   deleteEntry,
   updateEntry,
   getSingleEntry,
-  getSingleCategory
+  // getSingleCategory
 };
