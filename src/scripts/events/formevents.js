@@ -2,14 +2,14 @@ import { showEntry } from '../components/pages/vocab';
 import { createEntry, updateEntry } from '../../api/entryData';
 
 const formEvents = (uid) => {
-  document.querySelector('#form-container').addEventListener('submit', (e) => {
+  document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN ENTRY
     if (e.target.id.includes('submit-entry')) {
-      console.warn('CLICKED SUBMIT', e.target.id);
+      console.warn('CLICKED SUBMIT');
       const vocabObject = {
         title: document.querySelector('#title').value,
-        category: document.querySelector('#select-a-category').value,
+        category: document.querySelector('#category').value,
         definition: document.querySelector('#definition').value,
         date: new Date().toLocaleString(),
         uid
@@ -17,10 +17,10 @@ const formEvents = (uid) => {
       createEntry(vocabObject).then((vocabArray) => showEntry(vocabArray));
     }
 
-    // // CLICK EVENT FOR EDITING AN ENTRY
-    if (e.target.id.includes('update-entry')) {
+    // CLICK EVENT FOR EDITING AN ENTRY
+    if (e.target.id.includes('update-card')) {
+      console.warn('CLICKED EDIT ENTRY');
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('CLICKED EDIT ENTRY', e.target.id);
       const vocabObject = {
         title: document.querySelector('#title').value,
         category: document.querySelector('#category').value,
@@ -29,9 +29,8 @@ const formEvents = (uid) => {
         firebaseKey,
         uid
       };
-      console.warn(vocabObject);
 
-      updateEntry(firebaseKey, vocabObject).then((newVocabObject) => showEntry(newVocabObject, uid));
+      updateEntry(vocabObject).then(showEntry);
     }
   });
 };
