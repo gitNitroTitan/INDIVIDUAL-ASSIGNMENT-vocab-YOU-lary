@@ -1,4 +1,6 @@
-import { deleteEntry, getSingleEntry } from '../../api/entryData';
+import {
+  deleteEntry, getSingleEntry, getEntry, htmlBtn, cssBtn, javascriptBtn, techBtn
+} from '../../api/entryData';
 import { showEntry } from '../components/pages/vocab';
 import addEntryForm from '../components/forms/addVocabForm';
 
@@ -15,7 +17,7 @@ const domEvents = (uid) => {
 
     // CLICK EVENT FOR SHOWING FORM FOR ADDING AN ENTRY
     if (e.target.id.includes('create-entry')) {
-      console.warn('ADD ENTRY');
+      // console.warn('ADD ENTRY');
       addEntryForm(uid);
     }
 
@@ -26,6 +28,31 @@ const domEvents = (uid) => {
       // console.warn('EDIT ENTRY', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       getSingleEntry(firebaseKey).then((vocObj) => addEntryForm(vocObj, uid));
+    }
+    // FILTER BUTTON EVENTS ON MAIN CONTAINER
+    if (e.target.id.includes('clear-btn')) {
+      getEntry(uid).then(showEntry);
+      // console.warn('CLICKED ALL btn');
+    }
+    if (e.target.id.includes('html-btn')) {
+      htmlBtn(uid).then(showEntry);
+
+      // console.warn('CLICKED html btn', showEntry);
+    }
+    if (e.target.id.includes('css-btn')) {
+      cssBtn(uid).then(showEntry);
+    }
+
+    if (e.target.id.includes('javascript-btn')) {
+      javascriptBtn(uid).then(showEntry);
+
+      // console.warn('CLICKED javascript btn', showEntry);
+    }
+
+    if (e.target.id.includes('tech-btn')) {
+      techBtn(uid).then(showEntry);
+
+      // console.warn('CLICKED tech btn', showEntry);
     }
   });
 };

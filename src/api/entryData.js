@@ -49,16 +49,48 @@ const deleteEntry = (firebaseKey, uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// const getSingleCategory = (category) => new Promise((resolve, reject) => {
-//   axios.get(`${dbUrl}/vocabulary?orderBy="category"&equalTo="${category}"`)
-//     .then((response) => resolve(response.data))
-//     .catch((error) => reject(error));
-// });
+// HTML BUTTON FILTER
+const htmlBtn = (uid) => new Promise((resolve, reject) => {
+  getEntry(uid)
+    .then((indCard) => {
+      const getHtml = indCard.filter((card) => card.category === 'HTML');
+      resolve(getHtml);
+    })
+    .catch(reject);
+});
+const cssBtn = (uid) => new Promise((resolve, reject) => {
+  getEntry(uid)
+    .then((indCard) => {
+      const getCss = indCard.filter((card) => card.category === 'CSS');
+      resolve(getCss);
+    })
+    .catch(reject);
+});
+const javascriptBtn = (uid) => new Promise((resolve, reject) => {
+  getEntry(uid)
+    .then((indCard) => {
+      const getJavascript = indCard.filter((card) => card.category === 'JAVASCRIPT');
+      resolve(getJavascript);
+    })
+    .catch(reject);
+});
+const techBtn = (uid) => new Promise((resolve, reject) => {
+  getEntry(uid)
+    .then((indCard) => {
+      const getTech = indCard.filter((card) => card.category === 'TECH');
+      resolve(getTech);
+    })
+    .catch(reject);
+});
+
 export {
   getEntry,
   createEntry,
   deleteEntry,
   updateEntry,
   getSingleEntry,
-  // getSingleCategory
+  htmlBtn,
+  cssBtn,
+  javascriptBtn,
+  techBtn
 };

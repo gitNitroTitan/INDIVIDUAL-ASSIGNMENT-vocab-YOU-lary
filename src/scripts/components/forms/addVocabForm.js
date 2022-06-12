@@ -16,7 +16,8 @@ const addEntryForm = (obj = {}) => {
         <option selected>Select Menu</option>
         <option value="CSS">CSS</option>
         <option value="HTML">HTML</option>
-        <option value="Javascript">Javascript</option>
+        <option value="JAVASCRIPT">JAVASCRIPT</option>
+        <option value="TECH">TECH</option>
       </select>
       </div>
      <br>
